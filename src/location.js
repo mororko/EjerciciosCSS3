@@ -1,1 +1,1 @@
-import "../src/styles/location.scss";
+import "./styles/location.scss";
