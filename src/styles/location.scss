@@ -1,0 +1,260 @@
+// Colores
+$color-primary: #d5966c;
+$color-black: #151515;
+$color-gray: #444444;
+$color-white: #ffffff;
+
+// Breakpoints
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+
+// Tipografía
+// Variables de fuente
+$font-heading: "Big Shoulders Display", cursive;
+$font-body: "Outfit", sans-serif;
+
+$fw-heading: 900;
+$fw-body: 300;
+
+// Tamaños de Heading y line-height
+$fs-xl: 96px;
+$lh-xl: 88px;
+
+$fs-l: 70px;
+$lh-l: 70px;
+
+$fs-m: 60px;
+$lh-m: 50px;
+
+$fs-s: 36px;
+$lh-s: 36px;
+
+// Body text sizes
+$fs-body-m: 22px;
+$lh-body-m: 32px;
+
+$fs-body-s: 18px;
+$lh-body-s: 28px;
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.heading-xl {
+  font-family: $font-heading;
+  font-size: $fs-xl;
+  line-height: $lh-xl;
+}
+
+.heading-l {
+  font-family: $font-heading;
+  font-size: $fs-l;
+  line-height: $lh-l;
+}
+
+.heading-m {
+  font-family: $font-heading;
+  font-size: $fs-m;
+  line-height: $lh-m;
+}
+
+.heading-s {
+  font-family: $font-heading;
+  font-size: $fs-s;
+  line-height: $lh-s;
+}
+
+.body-m {
+  font-family: $font-body;
+  font-size: $fs-body-m;
+  line-height: $lh-body-m;
+  color: $color-gray;
+}
+
+.body-s {
+  font-family: $font-body;
+  font-size: $fs-body-s;
+  line-height: $lh-body-s;
+  color: $color-gray;
+}
+
+// Botones
+
+.btn--secondary {
+  display: inline-flex;
+  overflow: hidden;
+  text-decoration: none;
+  font-family: $font-heading;
+  font-size: $fs-s;
+  line-height: $lh-s;
+
+  .btn__label {
+    flex: 1;
+    background-color: $color-black;
+    color: $color-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn__icon {
+    background-color: $color-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  svg {
+    display: block;
+    width: 1.5rem;
+    height: auto;
+    color: $color-white;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .btn__label {
+      background-color: $color-primary;
+    }
+
+    .btn__icon {
+      background-color: $color-black;
+    }
+  }
+}
+
+//Mobile
+.header {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  height: 550px;
+
+  background: url("../images/Maps.png") no-repeat center center;
+  background-size: cover;
+
+  .btn--secondary {
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    z-index: 2;
+
+    @media (min-width: $bp-tablet) {
+      left: 4rem;
+    }
+
+    @media (min-width: $bp-desktop) {
+      left: 8rem;
+    }
+  }
+}
+
+.info__container {
+  background-color: $color-black;
+  margin: 0;
+  padding: 0;
+  h2 {
+    margin: 0;
+    padding: 3rem 1rem;
+    color: $color-white;
+  }
+
+  h4 {
+    color: $color-primary;
+    padding: 1rem 1rem;
+    margin: 0;
+  }
+  p {
+    padding: 1rem 1rem;
+    margin-bottom: 0;
+    color: $color-white;
+  }
+}
+
+@media (min-width: $bp-tablet) {
+  .info__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    padding: 3rem 2rem;
+
+    h2 {
+      margin: 0;
+      padding: 0rem 6rem;
+      color: $color-white;
+      width: 2rem;
+    }
+  }
+}
+
+//   @media (min-width: $bp-desktop) {
+
+//   }
+
+.footer {
+  margin: 0;
+  padding: 0;
+  background-color: $color-primary;
+
+  &__title {
+    margin: 0;
+    padding: 2rem 3rem;
+  }
+
+  &__text {
+    padding: 0rem 1rem;
+    color: $color-black;
+  }
+
+  &__social {
+    padding: 1rem;
+
+    a {
+      padding: 1rem;
+    }
+  }
+}
+
+// footer
+.footer {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    gap: 0.5rem;
+
+    @media (min-width: $bp-tablet) {
+      flex-direction: row;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    @media (min-width: $bp-desktop) {
+      flex-direction: row;
+      align-items: center;
+      gap: 20rem;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 1rem;
+
+    a {
+      display: inline-flex;
+
+      img {
+        height: auto;
+        display: block;
+      }
+    }
+  }
+}
